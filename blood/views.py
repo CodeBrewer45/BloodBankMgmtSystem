@@ -1,3 +1,4 @@
+from django.contrib.auth.views import LogoutView
 from django.shortcuts import render,redirect,reverse
 from . import forms,models
 from django.db.models import Sum,Q
@@ -246,3 +247,7 @@ def reject_donation_view(request,pk):
     donation.status='Rejected'
     donation.save()
     return HttpResponseRedirect('/admin-donation')
+
+class CustomLogoutView(LogoutView):
+    def get(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)

@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path,include
 from django.contrib.auth.views import LogoutView,LoginView
 from blood import views
+from blood.views import CustomLogoutView
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -26,7 +27,7 @@ urlpatterns = [
 
     
     path('',views.home_view,name=''),
-    path('logout', LogoutView.as_view(template_name='blood/logout.html'),name='logout'),
+    path('logout/', LogoutView.as_view(template_name='blood/logout.html'),name='logout'),
 
     path('afterlogin', views.afterlogin_view,name='afterlogin'),
     path('adminlogin', LoginView.as_view(template_name='blood/adminlogin.html'),name='adminlogin'),

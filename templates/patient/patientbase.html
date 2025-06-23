@@ -166,7 +166,13 @@ body{
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" style="color: white;" href="/logout">Logout &nbsp; <i class="fas fa-sign-out-alt"></i></a>
+                    <!-- ✅ Secure POST-based logout -->
+                    <form method="post" action="{% url 'logout' %}" style="display: inline;">
+                      {% csrf_token %}
+                      <button type="submit" style="background: none; border: none; color: #007bff; text-decoration: underline; cursor: pointer;">
+                        Logout
+                      </button>
+                    </form>
                 </li>
                 
             </ul>
