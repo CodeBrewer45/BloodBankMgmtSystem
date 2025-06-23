@@ -6,3 +6,4 @@ sqlparse
 pillow
 setuptools
 pythoncgi
+whitenoise

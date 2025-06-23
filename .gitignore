@@ -195,3 +195,4 @@ cython_debug/
 __pycache__/*
 blood/__pycache__/*
 blood/migrations/__pycache__/*
+staticfiles
